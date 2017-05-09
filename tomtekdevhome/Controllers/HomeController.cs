@@ -22,7 +22,7 @@ namespace tomtekdevhome.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Contact us at TomTek Development";
+            ViewBag.Message = "TomTek Development";
 
             return View();
         }
