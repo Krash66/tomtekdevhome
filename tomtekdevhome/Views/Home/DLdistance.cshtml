@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "C# form example";
+}
+@{
+    var Answer = "";
+
+    if (IsPost)
+    {
+        String w1 = Request["word1"].ToString();
+        String w2 = Request["word2"].ToString();
+        // The result as a string to be returned to the form
+
+        // Matrix for calculations
+        int[,] Dmatrix = new int[w1.Length + 1, w2.Length + 1];
+        // processing variables
+        int i, j, cost, min1;
+        // input words broken into character arrays for comparison on letter at a time
+        char[] W1CharArr, W2CharArr;
+
+        // initialize Character arrays
+        W1CharArr = w1.ToCharArray();
+        W2CharArr = w2.ToCharArray();
+
+        // initialize matrix rows
+        for (i = 0; i <= w1.Length; i++)
+        {
+            Dmatrix[i, 0] = i;
+        };
+        // initialize matrix Columns
+        for (j = 1; j <= w2.Length; j++)
+        {
+            Dmatrix[0, j] = j;
+        };
+
+        // go through matrix and quantify differences in strings into number result
+        for (i = 1; i <= w1.Length; i++)
+        {
+            for (j = 1; j <= w2.Length; j++)
+            {
+                // compare characters and determine initial cost
+                if (W1CharArr[i-1] == W2CharArr[j-1])
+                {
+                    cost = 0;
+                }
+                else
+                {
+                    cost = 1;
+                };
+                // set initial minimum by comparing deletion and insertion
+                min1 = System.Math.Min(Dmatrix[i - 1, j] + 1, Dmatrix[i, j - 1] + 1);
+                // Set Dmatrix value by comparing result above with substitution
+                Dmatrix[i, j] = System.Math.Min(min1, Dmatrix[i - 1, j - 1] + cost);
+                // Now compare and try transposition
+                // This is the Damerau addition to the Levenshtein Distance
+                if ((i > 1) && (j > 1))
+                {
+                    if ((W1CharArr[i - 1] == W2CharArr[j - 2]) && (W1CharArr[i - 2] == W2CharArr[j - 1]))
+                    {
+                        Dmatrix[i, j] = System.Math.Min(Dmatrix[i, j], Dmatrix[i - 2, j - 2] + cost);
+                    };
+                };
+            };
+        };
+        // The Damerau-Levenshtein Distance is now the last entry in the Matrix
+        Answer = "The D-L Distance between " + w1 + " and " + w2 + " is: " + Dmatrix[w1.Length, w2.Length].ToString();
+    }
+}
+
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    <p class="lead text-center">Just an example of an ASP.NET MVC page using Razor/C# to calculate the Damerau-Levenshtein Distance between to words. Enter two words and click Calculate and the D-L distance will be calcultated for you.<br /><br />The higher the number, the more the words differ, starting from 0 (zero) if the words are identical. Enjoy!
+    </p>
+    <form action="" method="post">
+        <div class="form-group">
+            <strong>
+                <label for="word1">First Word: </label>
+                <input type="text" name="word1" class="form-control text-justify" placeholder="type first word" />
+            </strong>
+        </div>
+        <div class="form-group">
+            <strong>
+                <label for="word2">Second word: </label>
+                <input type="text" name="word2" class="form-control text-justify" placeholder="type second word" />
+            </strong>
+        </div>
+        <div class="form-group">
+            <strong>
+                <Button class="btn btn-primary btn-lg center-block" id="submit" type="submit" value="Submit">Calculate</Button>
+            </strong>
+        </div>
+        <div class="form-group">
+            <strong>
+                <label for="Answer">Answer: </label>
+                <textbox name="Answer" class="form-control" >@Answer</textbox>
+            </strong>
+        </div>
+    </form>
+</div>

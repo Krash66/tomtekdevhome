@@ -18,15 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("TomTek Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Resume", "Resume", "Home")</li>
+                    <li>@Html.ActionLink("Demo Projects", "Demo", "Home")</li>
+                    <li>@Html.ActionLink("D-L Distance", "DLdistance", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

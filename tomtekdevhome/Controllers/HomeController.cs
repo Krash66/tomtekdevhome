@@ -33,5 +33,19 @@ namespace tomtekdevhome.Controllers
 
             return View();
         }
+
+        public ActionResult Demo()
+        {
+            ViewBag.Message = "A few of our Past Projects";
+
+            return View();
+        }
+
+        public ActionResult DLdistance()
+        {
+            ViewBag.Message = "Damerau-Levenshtein Distance";
+
+            return View();
+        }
     }
 }
