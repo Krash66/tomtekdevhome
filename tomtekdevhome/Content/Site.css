@@ -9,6 +9,15 @@
     padding-right: 15px;
 }
 
+.navbar-nav {
+    font-size: x-large;
+}
+
+.nav a {
+    color: #ffffff !important;
+    font-size: 18px !important;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -20,5 +29,5 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
