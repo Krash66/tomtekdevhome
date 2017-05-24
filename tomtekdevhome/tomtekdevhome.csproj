@@ -243,7 +243,22 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\IMAG0029.jpg" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\10.jpg" />
+    <Content Include="images\11.jpg" />
+    <Content Include="images\12.jpg" />
+    <Content Include="images\13.jpg" />
+    <Content Include="images\14.jpg" />
+    <Content Include="images\15.jpg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\8.jpg" />
+    <Content Include="images\9.png" />
+    <Content Include="images\DSCF0036.JPG" />
     <Content Include="resume.htm" />
     <Content Include="resume_files\colorschememapping.xml" />
     <Content Include="resume_files\filelist.xml" />
@@ -309,6 +324,7 @@
     <Content Include="Tom-Karasch-Resume.doc" />
     <Content Include="Views\Home\Demo.cshtml" />
     <Content Include="Views\Home\DLdistance.cshtml" />
+    <Content Include="Views\Home\LAMP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
