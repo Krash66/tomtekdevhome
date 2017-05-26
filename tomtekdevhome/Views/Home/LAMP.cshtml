@@ -1,12 +1,16 @@
 ﻿@{
-    ViewBag.Title = "TomTek Development LAMP Site";
+    ViewBag.Title = "LAMP Application";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@*<div class="panel panel-default">
-    <div class="panel-heading">TomTek Development LAMP Site</div>
+<div class="jumbotron">
+    <h2>@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    <p class="lead">This is a fully functioning LAMP Application utilizing JavaScript, PHP, MySQL, JSON, XML, HTML5, CSS and the <a href="https://dhtmlx.com/" target="_blank">dHTMLx JavaScript framework by DHX.</a> This is a fully functioning App and allows uploads downloads and script generation.</p>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Web Studio</div>
     <div class="panel-body" style="min-height: 500px">
-        <object type="text/html" data="http://tomtekdev.com/indexhome.html">TomTek Development LAMP Site</object>
+        <iframe id="iframeStudio" style="min-height:700px;height:100%; width:100%; margin:0px; border:0px; padding:0px" src="http://tomtekdev.com/SQDATA/Studio/indexMain.html" />
     </div>
-</div>*@
+</div>

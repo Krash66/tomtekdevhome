@@ -14,10 +14,13 @@
 }
 
 .nav a {
-    color: #ffffff !important;
-    font-size: 18px !important;
+    color: #ffffff;           /*!important*/
+    font-size: 18px;       /*!important;*/
 }
 
+form label{
+    font-size: 18px;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

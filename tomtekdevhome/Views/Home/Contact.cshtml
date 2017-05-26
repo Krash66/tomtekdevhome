@@ -26,36 +26,43 @@
     </h3>
 </div>
 
-@*<div>
+<div>
     <div class="jumbotron">
         <div>
             @if (ViewBag.Message == null)
             {
-                <h2>Contact form</h2>
+                <h2>Currently under construction</h2>
+                <h2 class="text-primary">Contact form</h2><br />
+                <p>No information will be used outside TomTek Development. Just for demonstration purposes.</p>
                 <div>
                     <form method="post">
                         <div class="form-group">
                             <label asp-for="Name">Name</label>
-                            <input asp-for="Name" class="form-control" />
+                            <input asp-for="Name" class="form-control" placeholder="Required"/>
                             <span asp-validation-for="Name" class="text-muted"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Email">Email</label>
-                            <input asp-for="Email" class="form-control" />
+                            <input asp-for="Email" class="form-control"  placeholder="Required"/>
                             <span asp-validation-for="Email" class="text-muted"></span>
                         </div>
                         <div class="form-group">
+                            <label asp-for="Phone">Phone</label>
+                            <input asp-for="Phone" class="form-control"  placeholder="Optional"/>
+                            <span asp-validation-for="Phone" class="text-muted"></span>
+                        </div>
+                        <div class="form-group">
                             <label asp-for="Subject">Subject</label>
-                            <input asp-for="Subject" class="form-control" />
+                            <input asp-for="Subject" class="form-control"  placeholder="Required"/>
                             <span asp-validation-for="Subject" class="text-muted"></span>
                         </div>
                         <div class="form-group">
                             <label asp-for="Message">Message</label>
-                            <textarea rows="5" cols="15" asp-for="Message" class="form-control"></textarea>
+                            <textarea rows="5" cols="15" asp-for="Message" class="form-control" placeholder="Required"></textarea>
                             <span asp-validation-for="Message" class="text-muted"></span>
                         </div>
                         <div>
-                            <button type="submit" class="btn btn-success">Send</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Send &raquo;</button>
                         </div>
                     </form>
                 </div>
@@ -72,4 +79,4 @@
         </div>
     </div>
 
-</div>*@
+</div>

@@ -100,5 +100,12 @@ namespace tomtekdevhome.Controllers
 
             return View();
         }
+
+        public ActionResult LAMP()
+        {
+            ViewBag.Message = "Web Studio Database tool";
+
+            return View();
+        }
     }
 }

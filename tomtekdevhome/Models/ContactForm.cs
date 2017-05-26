@@ -14,6 +14,9 @@ namespace tomtekdevhome.Models
         [Required(ErrorMessage = "You must provide your email."), EmailAddress]
         public string Email { get; set; }
 
+        [Phone]
+        public string Phone { get; set; }
+
         [Required(ErrorMessage ="You must include a subject.")]
         public string Subject { get; set; }
 
