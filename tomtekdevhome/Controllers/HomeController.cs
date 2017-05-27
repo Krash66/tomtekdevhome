@@ -45,12 +45,12 @@ namespace tomtekdevhome.Controllers
                     {
                         Host = "smtp.gmail.com",
 
-                        Port = 587,
+                        Port = 993,
 
                         Credentials = new System.Net.NetworkCredential
                     ("tomtekdev@gmail.com", "Bartisgr8"),
 
-                        EnableSsl = false
+                        EnableSsl = true
                     };
                     smtp.Send(msz);
 
