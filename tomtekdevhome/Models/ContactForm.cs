@@ -17,7 +17,7 @@ namespace tomtekdevhome.Models
         [Phone]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage ="You must include a subject.")]
+        [Required(ErrorMessage = "You must include a subject.")]
         public string Subject { get; set; }
 
         [Required(ErrorMessage = "You must include a message.")]

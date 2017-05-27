@@ -2,8 +2,7 @@
     ViewBag.Title = "TomTek Development";
 }
 
-<div id="myCarousel" class="carousel slide center-block " data-ride="carousel" style="max-width:640px;align-content:center">
-    @*style="height:330px;width:640px;align-content:center"*@
+<div id="myCarousel" class="carousel slide center-block" data-ride="carousel" data-interval="4000" style="max-width:640px;align-content:center">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -25,7 +24,6 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" style="max-width:640px;align-content:center">
-        @*style="height:330px;width:640px;align-content:center"caroClass *@
         <div class="item active">
             <img src="~/images/1.jpg" />
             <div class="carousel-caption">
@@ -98,7 +96,7 @@
 
         <div class="item">
             <img src="~/images/11.jpg" />
-            <div class="carousel-caption">
+            <div class="carousel-caption text-danger">
                 <h3>...so you can break FREE!</h3>
             </div>
         </div>
@@ -126,7 +124,7 @@
 
         <div class="item">
             <img src="~/images/15.jpg" />
-            <div class="carousel-caption">
+            <div class="carousel-caption text-primary">
                 <h3>So you have time for what matters</h3>
                 <h1>TomTek Development</h1>
             </div>
