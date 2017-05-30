@@ -5,7 +5,7 @@
 }
 
 <div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
+    <h2>@User.Identity.Name  @ViewBag.Title</h2>
 
     <h3>
         TomTek Development
@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="Email">Email</label>
-                            <input asp-for="Email" class="form-control"  placeholder="Required"/>
+                            <input asp-for="Email" class="form-control"  placeholder="Required" value="@User.Identity.Name"/>
                             <span asp-validation-for="Email" class="text-muted"></span>
                         </div>
                         <div class="form-group">

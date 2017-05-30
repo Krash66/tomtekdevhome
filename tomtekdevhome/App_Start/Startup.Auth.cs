@@ -60,8 +60,8 @@ namespace tomtekdevhome
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "830857645203-7clk2b9olh03v4a52f4jbsqfnjl7cpu4.apps.googleusercontent.com",
+            //    ClientSecret = "_T4ydYt8CzZl_HjJ0y6Mvw-3"
             //});
         }
     }
