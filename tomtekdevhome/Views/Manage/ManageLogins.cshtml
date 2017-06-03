@@ -2,6 +2,7 @@
 @using Microsoft.Owin.Security
 @{
     ViewBag.Title = "Manage your external logins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="jumbotron">
     <h2>@ViewBag.Title.</h2>
@@ -13,8 +14,8 @@
         {
             <div>
                 <p>
-                    There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
-                    for details on setting up this ASP.NET application to support logging in via external services.
+                    There are no external authentication services configured. @*See <a href="https://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+                    for details on setting up this ASP.NET application to support logging in via external services.*@
                 </p>
             </div>
         }

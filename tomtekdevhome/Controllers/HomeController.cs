@@ -108,5 +108,12 @@ namespace tomtekdevhome.Controllers
 
             return View();
         }
+
+        public ActionResult Admin()
+        {
+            ViewBag.Message = "Administrator panel";
+
+            return View();
+        }
     }
 }

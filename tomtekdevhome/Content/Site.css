@@ -28,8 +28,12 @@ form label{
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
+.dl-horizontal dd {
+    font-size:20px;
+}
 .dl-horizontal dt {
     white-space: normal;
+    font-size: 20px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
