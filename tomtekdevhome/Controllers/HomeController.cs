@@ -22,55 +22,55 @@ namespace tomtekdevhome.Controllers
             return View();
         }
 
-        [HttpGet]
+        //[HttpGet]
         public ActionResult Contact()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Contact(ContactForm vm)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    MailMessage msz = EMailMsg();
-                    msz.From = new MailAddress(vm.Email);//Email which you are getting 
-                                                         //from contact us page 
-                    msz.To.Add("tomtekdev@gmail.com");//Where mail will be sent 
-                    msz.Subject = vm.Subject;
-                    msz.Body = vm.Message;
-                    SmtpClient smtp = new SmtpClient()
-                    {
-                        Host = "smtp.gmail.com",
+        //[HttpPost]
+        //public ActionResult Contact(ContactForm vm)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            MailMessage msz = EMailMsg();
+        //            msz.From = new MailAddress(vm.Email);//Email which you are getting 
+        //                                                 //from contact us page 
+        //            msz.To.Add("tomtekdev@gmail.com");//Where mail will be sent 
+        //            msz.Subject = vm.Subject;
+        //            msz.Body = vm.Message;
+        //            SmtpClient smtp = new SmtpClient()
+        //            {
+        //                Host = "smtp.gmail.com",
 
-                        Port = 993,
+        //                Port = 993,
 
-                        Credentials = new System.Net.NetworkCredential
-                    ("tomtekdev@gmail.com", "Bartisgr8"),
+        //                Credentials = new System.Net.NetworkCredential
+        //            ("tomtekdev@gmail.com", "Bartisgr8"),
 
-                        EnableSsl = true
-                    };
-                    smtp.Send(msz);
+        //                EnableSsl = true
+        //            };
+        //            smtp.Send(msz);
 
-                    ModelState.Clear();
-                    ViewBag.Message = "Thank you for Contacting us ";
-                }
-                catch (Exception ex)
-                {
-                    ModelState.Clear();
-                    ViewBag.Message = $"Sorry, there is a Problem here processing your request: {ex.Message}";
-                }
-            }
+        //            ModelState.Clear();
+        //            ViewBag.Message = "Thank you for Contacting us ";
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            ModelState.Clear();
+        //            ViewBag.Message = $"Sorry, there is a Problem here processing your request: {ex.Message}";
+        //        }
+        //    }
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        private static MailMessage EMailMsg()
-        {
-            return new MailMessage();
-        }
+        //private static MailMessage EMailMsg()
+        //{
+        //    return new MailMessage();
+        //}
 
         public ActionResult Error
         {
