@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using tomtekdevhome.Models;
 using System.Net.Mail;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace tomtekdevhome.Controllers
 {
@@ -22,55 +24,37 @@ namespace tomtekdevhome.Controllers
             return View();
         }
 
-        //[HttpGet]
         public ActionResult Contact()
         {
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult Contact(ContactForm vm)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            MailMessage msz = EMailMsg();
-        //            msz.From = new MailAddress(vm.Email);//Email which you are getting 
-        //                                                 //from contact us page 
-        //            msz.To.Add("tomtekdev@gmail.com");//Where mail will be sent 
-        //            msz.Subject = vm.Subject;
-        //            msz.Body = vm.Message;
-        //            SmtpClient smtp = new SmtpClient()
-        //            {
-        //                Host = "smtp.gmail.com",
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Contact(ContactFormModels model)
+        {
+            if (ModelState.IsValid)
+            {
+                var body = "<p>Email From: {0} ({1})</p><p>Phone: {2}</p><p>Subject: {3}</p><p>Message:</p><p>{4}</p>";
+                var message = new MailMessage();
+                message.To.Add(new MailAddress("tomkarasch@gmail.com"));
+                message.To.Add(new MailAddress("tomkarasch@tomtekdev.com"));
+                message.Subject = "From Contact Page at TomTekDev Homepage";
+                message.Body = string.Format(body, model.Name, model.Email, model.Phone, model.Subject, model.Message);
+                message.IsBodyHtml = true;
+                using (var smtp = new SmtpClient())
+                {
+                    await smtp.SendMailAsync(message);
+                    return RedirectToAction("Sent");
+                }
+            }
+            return View();
+        }
 
-        //                Port = 993,
-
-        //                Credentials = new System.Net.NetworkCredential
-        //            ("tomtekdev@gmail.com", "Bartisgr8"),
-
-        //                EnableSsl = true
-        //            };
-        //            smtp.Send(msz);
-
-        //            ModelState.Clear();
-        //            ViewBag.Message = "Thank you for Contacting us ";
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            ModelState.Clear();
-        //            ViewBag.Message = $"Sorry, there is a Problem here processing your request: {ex.Message}";
-        //        }
-        //    }
-
-        //    return View();
-        //}
-
-        //private static MailMessage EMailMsg()
-        //{
-        //    return new MailMessage();
-        //}
+        public ActionResult Sent()
+        {
+            return View();
+        }
 
         public ActionResult Error
         {

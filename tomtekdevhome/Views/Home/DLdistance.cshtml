@@ -3,6 +3,8 @@
 }
 @{
     var Answer = "";
+    var fword = "";
+    var sword = "";
 
     if (IsPost)
     {
@@ -62,6 +64,8 @@
             };
         };
         // The Damerau-Levenshtein Distance is now the last entry in the Matrix
+        fword = w1;
+        sword = w2;
         Answer = "The D-L Distance between " + w1 + " and " + w2 + " is: " + Dmatrix[w1.Length, w2.Length].ToString();
     }
 }
@@ -75,13 +79,13 @@
         <div class="form-group">
             <strong>
                 <label for="word1">First Word: </label>
-                <input type="text" name="word1" class="form-control text-justify" placeholder="type first word" />
+                <input type="text" name="word1" class="form-control text-justify" placeholder="type first word" value="@fword"  />
             </strong>
         </div>
         <div class="form-group">
             <strong>
                 <label for="word2">Second word: </label>
-                <input type="text" name="word2" class="form-control text-justify" placeholder="type second word" />
+                <input type="text" name="word2" class="form-control text-justify" placeholder="type second word" value="@sword"/>
             </strong>
         </div>
         <div class="form-group">
