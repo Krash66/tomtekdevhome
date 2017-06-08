@@ -35,7 +35,18 @@ form label{
     white-space: normal;
     font-size: 20px;
 }
-
+.carousel-caption {
+    /*color:#ffffff;*/
+    text-shadow:2px 2px 2px #000000;
+}
+.carousel-caption text-danger{
+    color: #ff0000;
+    text-shadow: 2px 2px 2px #000000;
+}
+.carousel-caption text-primary {
+        color: #ff6a00;
+        text-shadow: 2px 2px 2px #000000;
+    }
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

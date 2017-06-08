@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace tomtekdevhome.Models
 {
@@ -12,9 +8,11 @@ namespace tomtekdevhome.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "<h3 style='color:red'>You must provide your email.</h3>"), EmailAddress]
+        [DisplayFormat]
         public string Email { get; set; }
 
         [Phone]
+        [DisplayFormat]
         public string Phone { get; set; }
 
         [Required(ErrorMessage = "<h3 style='color:red'>You must include a subject.</h3>")]

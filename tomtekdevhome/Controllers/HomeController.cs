@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using tomtekdevhome.Models;
 using System.Net.Mail;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace tomtekdevhome.Controllers
@@ -38,7 +33,7 @@ namespace tomtekdevhome.Controllers
                 var body = "<p>Email From: {0} ({1})</p><p>Phone: {2}</p><p>Subject: {3}</p><p>Message:</p><p>{4}</p>";
                 var message = new MailMessage();
                 message.To.Add(new MailAddress("tomkarasch@gmail.com"));
-                message.To.Add(new MailAddress("tomkarasch@tomtekdev.com"));
+                message.To.Add(new MailAddress("tomtekdev@gmail.com"));
                 message.Subject = "From Contact Page at TomTekDev Homepage";
                 message.Body = string.Format(body, model.Name, model.Email, model.Phone, model.Subject, model.Message);
                 message.IsBodyHtml = true;
