@@ -349,7 +349,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="XMLconv.exe" />
-    <Content Include="Connected Services\Application Insights\ConnectedService.json" />
     <None Include="Properties\PublishProfiles\tomtekdevhome20170507101001 - Web Deploy.pubxml" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
@@ -410,6 +409,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="Connected Services\Application Insights\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705282246089_InitialCreate.resx">
