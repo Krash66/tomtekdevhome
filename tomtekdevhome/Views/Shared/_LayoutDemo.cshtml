@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Demo Page";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <title>@ViewBag.Title - TomTek Development</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-image: url('../../images/DSCF0036.JPG');
+                background-repeat: repeat;
+                background-attachment: fixed;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TomTek Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Demo Projects", "Index", "Demo")</li>
+                    <li>@Html.ActionLink("LAMP Studio", "LStudio", "Demo")</li>
+                    <li>@Html.ActionLink("D-L Distance C#", "CDLD", "Demo")</li>
+                    <li>@Html.ActionLink("D-L App ASP", "ADLD", "Demo")</li>
+                    @*<li>@Html.ActionLink("GitHub", "Github", "Demo")</li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Property of TomTek Development</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

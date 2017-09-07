@@ -5,172 +5,65 @@
     var UID = ", " + User.Identity.Name;
 }
 
-<div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
-
-    <h3>
-        Thanks for your interest @UID<br /><br />
-        TomTek Development<br />
-        c/o Tom Karasch, Owner<br />
-        1737 Hemingway Ln.<br />
-        Roswell, GA 30075<br />
-        <abbr title="Phone">P:</abbr>
-        (678)596-7224
-    </h3>
-
-    <h3>
-        <strong>Direct: </strong>    <a href="mailto:tomkarasch@tomtekdev.com">tomkarasch@tomtekdev.com</a><br />
-        <strong>Support: </strong>   <a href="mailto:support@tomtekdev.com">support@tomtekdev.com</a><br />
-        <strong>Sales: </strong>     <a href="mailto:sales@tomtekdev.com">sales@tomtekdev.com</a><br />
-        <strong>LinkedIn: </strong><a href="https://www.linkedin.com/in/tomtekdev/" target="_blank">tomtekdev on LinkedIn</a><br />
-        <strong>Github: </strong><a href="https://github.com/Krash66" target="_blank">tomtekdev on Github</a>
-    </h3>
-</div>
-<div>
-    <div class="jumbotron">
-
-        <h2>Contact form </h2><p>No information will be used outside TomTek Development. </p>
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-                @Html.ValidationMessageFor(m => m.Name)
-                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder="Your Name (Required)" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                @Html.ValidationMessageFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Your E-mail (Required)" })  
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
-                @Html.ValidationMessageFor(m => m.Phone)
-                @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Your Phone (###)###-#### (Optional)" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-                @Html.ValidationMessageFor(m => m.Subject)
-                @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder="Your Subject (Required)" })
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-                @Html.ValidationMessageFor(m => m.Message)
-                @Html.TextAreaFor(m => m.Message, new { @class = "form-control", style = "height:200px", placeholder="Type your message here (Required)" })
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-lg" value="Send" />
-            </div>
-        }
+<div class="container body-content">
+    <div class="jumbotron text-center">
+        <h2>@ViewBag.Title</h2>
+        <h3>
+            Thanks for your interest @UID<br /><br />
+            TomTek Development<br />
+            c/o Tom Karasch, Owner<br />
+            1737 Hemingway Ln.<br />
+            Roswell, GA 30075<br />
+            <abbr title="Phone">P:</abbr>
+            (678)596-7224
+        </h3>
+        <h3>
+            @*<strong>Direct: </strong>    <a href="mailto:tomkarasch@tomtekdev.com">tomkarasch@tomtekdev.com</a><br />*@
+            <strong>Support: </strong>   <a href="mailto:support@tomtekdev.com">support@tomtekdev.com</a><br />
+            <strong>Sales: </strong>     <a href="mailto:sales@tomtekdev.com">sales@tomtekdev.com</a><br />
+            <strong>LinkedIn: </strong><a href="https://www.linkedin.com/in/tomtekdev/" target="_blank">tomtekdev on LinkedIn</a><br />
+            <strong>Github: </strong><a href="https://github.com/Krash66" target="_blank">tomtekdev on Github</a>
+        </h3>
+    </div>
+    <div>
+        <div class="jumbotron">
+            <h2 class="text-center">Contact form </h2>
+            <p class="text-center">No information will be used outside TomTek Development. </p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Your Name (Required)" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Your E-mail (Required)" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                    @Html.ValidationMessageFor(m => m.Phone)
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Your Phone (###)###-#### (Optional)" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+                    @Html.ValidationMessageFor(m => m.Subject)
+                    @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", placeholder = "Your Subject (Required)" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+                    @Html.ValidationMessageFor(m => m.Message)
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control", style = "height:200px", placeholder = "Type your message here (Required)" })
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-lg" value="Send" />
+                </div>
+            }
+        </div>
     </div>
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-@*<div>
-
-        <div class="jumbotron">
-
-            <div>
-
-                @if (ViewBag.Message == null)
-
-                {
-
-                    <h2>Currently under construction</h2>
-
-                    <h2 class="text-primary">Contact form</h2><br />
-
-                    <p>No information will be used outside TomTek Development. Just for demonstration purposes.</p>
-
-                    <div>
-
-                        <form method="post">
-
-                            <div class="form-group">
-
-                                <label asp-for="Name">Name</label>
-
-                                <input asp-for="Name" class="form-control" placeholder="Required"/>
-
-                                <span asp-validation-for="Name" class="text-muted"></span>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label asp-for="Email">Email</label>
-
-                                <input asp-for="Email" class="form-control"  placeholder="Required" value="@User.Identity.Name"/>
-
-                                <span asp-validation-for="Email" class="text-muted"></span>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label asp-for="Phone">Phone</label>
-
-                                <input asp-for="Phone" class="form-control"  placeholder="Optional"/>
-
-                                <span asp-validation-for="Phone" class="text-muted"></span>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label asp-for="Subject">Subject</label>
-
-                                <input asp-for="Subject" class="form-control"  placeholder="Required"/>
-
-                                <span asp-validation-for="Subject" class="text-muted"></span>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label asp-for="Message">Message</label>
-
-                                <textarea rows="5" cols="15" asp-for="Message" class="form-control" placeholder="Required"></textarea>
-
-                                <span asp-validation-for="Message" class="text-muted"></span>
-
-                            </div>
-
-                            <div>
-
-                                <button type="submit" class="btn btn-primary btn-lg">Send &raquo;</button>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                }
-
-            </div>
-
-
-
-            <div>
-
-                <div>
-
-                    @if (ViewBag.Message != null)
-
-                    {
-
-                        <div>@ViewBag.Message</div>
-
-                    }
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-    </div>*@

@@ -14,7 +14,7 @@ namespace tomtekdevhome.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Our Mission at TomTek Development";
+            ViewBag.Message = "About TomTek Development's owner";
 
             return View();
         }
@@ -58,32 +58,24 @@ namespace tomtekdevhome.Controllers
                 return View();
             }
         }
-
-        public ActionResult Resume()
-        {
-            ViewBag.Message = "Tom Karasch's Resume";
-
-            return View();
-        }
-
         
-        public ActionResult Demo()
-        {
-            ViewBag.Message = "A few of our Past Projects";
+        //public ActionResult Demo()
+        //{
+        //    ViewBag.Message = "A Few Demonstration Projects";
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult DLdistance()
-        {
-            ViewBag.Message = "Damerau-Levenshtein Distance";
+        //public ActionResult DLdistance()
+        //{
+        //    ViewBag.Message = "Damerau-Levenshtein Distance";
 
-            return View();
-        }
+        //    return View();
+        //}
 
         public ActionResult LAMP()
         {
-            ViewBag.Message = "Web Studio Database tool";
+            ViewBag.Message = "Unix/Apache hosted TomTek Website using dHTMLx";
 
             return View();
         }

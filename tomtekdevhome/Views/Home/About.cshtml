@@ -1,14 +1,23 @@
 ﻿@{
-    ViewBag.Title = "About Us";
+    ViewBag.Title = "Owner's Story";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
-    <h3>@ViewBag.Message</h3>
-    <p class="lead">
-        TomTek Development is a Computer Consulting company based in Roswell, GA. We specialize in problem solving for your business by building quality web sites and applications. We do this by utilizing your existing data to the greatest benefit or by creating new data solutions to better achieve your company's goals. We do this by providing personalized consulting and programming solutions that best help your company use your data in the most helpful and useful way for your employees.
-        <br />
-        <br />
-        We believe that data without a plan is more of a problem than a solution. We will help you get the most benefit from your data, whether it is client data, inventory, etc. or whether you have different databases that don't currently work together to your advantage. We will work with you to plan, design, build, and implement the best solution(s) for your business.
-    </p>
+<div class="container body-content">
+    <div class="jumbotron text-center">
+        <h2>@ViewBag.Title</h2>
+        <h3>@ViewBag.Message</h3>
+        <p>Tom Karasch started programming computers as a young boy. 40 years later he's still at it, always learning and always growing as a computer professional. Building, programming and networking computers has been his passion for decades. He enjoys helping others to learn the benefits of computers and the internet as it pertains to their lives and businesses. </p>
+        <p class="lead">
+            If you would like to download Tom's resume, click one of the download buttons.<br /><br />
+            <a href="../resumeTomKaraschSWD.docx" class="btn btn-primary btn-lg" title="">Download in MS Word format &raquo;</a>
+            <a href="../resumeTomKaraschSWD.pdf" class="btn btn-primary btn-lg" title="">Download in Adobe Acrobat format &raquo;</a>
+        </p>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">Resume</div>
+        <div class="panel-body" style="min-height: 600px">
+            <object type="text/html" style="width:100%;height:580px; padding:0px" data="~/resumeTomKaraschSWDF.htm">Tom Karasch's Resume</object>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 
@@ -18,7 +18,24 @@
     font-size: 18px;       /*!important;*/
 }
 
-.checkbox label {
+.container .jumbotron,
+.container-fluid .jumbotron {
+    border-radius: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    /*width: 1400px;*/
+    background-color: rgba(23, 97, 137, 0.56);
+    border-radius: 50px;
+}
+
+    .checkbox label {
     font-size: 18px;
 }
 

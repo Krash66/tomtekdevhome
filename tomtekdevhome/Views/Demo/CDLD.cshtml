@@ -1,6 +1,9 @@
-﻿@{
-    ViewBag.Title = "C# form example";
+﻿
+@{
+    ViewBag.Title = "D-L Distance - C#/Razor form example";
+    Layout = "~/Views/Shared/_LayoutDemo.cshtml";
 }
+
 @{
     var Answer = "";
     var fword = "";
@@ -40,7 +43,7 @@
             for (j = 1; j <= w2.Length; j++)
             {
                 // compare characters and determine initial cost
-                if (W1CharArr[i-1] == W2CharArr[j-1])
+                if (W1CharArr[i - 1] == W2CharArr[j - 1])
                 {
                     cost = 0;
                 }
@@ -70,34 +73,37 @@
     }
 }
 
-<div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
-    <h3>@ViewBag.Message</h3>
-    <p class="lead">Just an example of an ASP.NET MVC page using Razor/C# to calculate the Damerau-Levenshtein Distance between two words. Enter two words and click Calculate and the D-L distance will be calculated for you.<br /><br />The higher the number, the more the words differ, starting from 0 (zero) if the words are identical. Enjoy!
-    </p>
-    <form action="" method="post">
-        <div class="form-group">
-            <strong>
-                <label for="word1">First Word: </label>
-                <input type="text" name="word1" class="form-control text-justify" placeholder="type first word" value="@fword"  />
-            </strong>
-        </div>
-        <div class="form-group">
-            <strong>
-                <label for="word2">Second word: </label>
-                <input type="text" name="word2" class="form-control text-justify" placeholder="type second word" value="@sword"/>
-            </strong>
-        </div>
-        <div class="form-group">
-            <strong>
-                <Button class="btn btn-primary btn-lg center-block" id="submit" type="submit" value="Submit">Calculate</Button>
-            </strong>
-        </div>
-        <div class="form-group">
-            <strong>
-                <label for="Answer">Answer: </label>
-                <textbox name="Answer" class="form-control" >@Answer</textbox>
-            </strong>
-        </div>
-    </form>
+<div class="container body-content">
+    <div class="jumbotron">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <h3 class="text-center">@ViewBag.Message</h3>
+        <p class="lead">
+            Just an example of an ASP.NET MVC page using Razor/C# to calculate the Damerau-Levenshtein Distance between two words. Enter two words and click Calculate and the D-L distance will be calculated for you.<br /><br />The higher the number, the more the words differ, starting from 0 (zero) if the words are identical. Enjoy!
+        </p>
+        <form action="" method="post">
+            <div class="form-group">
+                <strong>
+                    <label for="word1">First Word: </label>
+                    <input type="text" name="word1" class="form-control text-justify" placeholder="type first word" value="@fword" />
+                </strong>
+            </div>
+            <div class="form-group">
+                <strong>
+                    <label for="word2">Second word: </label>
+                    <input type="text" name="word2" class="form-control text-justify" placeholder="type second word" value="@sword" />
+                </strong>
+            </div>
+            <div class="form-group">
+                <strong>
+                    <Button class="btn btn-primary btn-lg center-block" id="submit" type="submit" value="Submit">Calculate</Button>
+                </strong>
+            </div>
+            <div class="form-group">
+                <strong>
+                    <label for="Answer">Answer: </label>
+                    <textbox name="Answer" class="form-control">@Answer</textbox>
+                </strong>
+            </div>
+        </form>
+    </div>
 </div>

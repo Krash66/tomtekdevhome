@@ -1,7 +1,12 @@
 ﻿@{
-    ViewBag.Title = "Sent";
+    ViewBag.Title = "Message Sent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="jumbotron">
-    <h2>Your message has been sent</h2>
+
+<div class="container body-content">
+    <div class="jumbotron text-center">
+        <h2>@ViewBag.Title</h2>
+        <h3>Your message has been sent</h3>
+    </div>
 </div>
 

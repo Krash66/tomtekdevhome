@@ -1,22 +1,21 @@
 ﻿@{
-    ViewBag.Title = "LAMP Application";
+    ViewBag.Title = "LAMP Homepage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h2>@ViewBag.Title</h2>
-    <h3>@ViewBag.Message</h3>
-    <p class="lead">This is a fully functioning LAMP Application utilizing JavaScript, PHP, MySQL, JSON, XML, HTML5, CSS and the <a href="https://dhtmlx.com/" target="_blank">dHTMLx JavaScript framework by DHX.</a> This is a fully functioning App and allows uploads downloads and script generation. See the source code here.</p>
-    <p class="lead">
-        <a href="https://github.com/Krash66/SQDWebStudio" class="btn btn-primary btn-lg" target="_blank">SQD Web Studio Source Code &raquo;</a>
-        <a href="http://tomtekdev.com/SQDATA/Studio/indexMain.html" class="btn btn-primary btn-lg" target="_blank">Open Web Studio in a new Tab &raquo;</a>
-    </p>
-</div>
+<div class="container body-content">
+    <div class="jumbotron text-center">
+        <h2>@ViewBag.Title</h2>
+        <h3>@ViewBag.Message</h3>
 
+        <p>See our <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP</a> site which utilizes Javascript, PHP, MySQL, <a href="https://dhtmlx.com/" target="_blank">dHTMLx</a>, XML, JSON, jQuery and AJAX on Apache Server. Source code <a href="https://github.com/Krash66/PHPhp" target="_blank">HERE.</a></p>
+        <p><a href="http://tomtekdev.com/indexhome.html" class="btn btn-primary btn-lg" target="_blank">(LAMP) Website &raquo;</a></p>
+    </div>
+</div>
 <div class="panel panel-default">
-    <div class="panel-heading">Web Studio</div>
-    <div class="panel-body" style="min-height: 700px">
-        <iframe id="iframeStudio" style="height:680px; width:100%; margin:0px; border:0px; padding:0px" src="http://tomtekdev.com/SQDATA/Studio/indexMain.html" /><br/>
+    <div class="panel-heading text-center">LAMP Homepage</div>
+    <div class="panel-body" style="min-height: 800px">
+        <iframe id="iframePHPhp" style="height:780px; width:100%; margin:0px; border:0px; padding:0px" src="http://tomtekdev.com/indexhome.html" /><br />
     </div>
 </div>
 
